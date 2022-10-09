@@ -45,20 +45,16 @@ fn vs_main(
 @fragment
 fn fs_main(in: VertexOutput) -> @location(0) vec4<f32>{
 	let peak : f32 = lerp(0.0, -0.1111111111111111, sharpness);
-	// let pos : vec2<f32>  = (ip + 0.5) * in.tex_coords;
-    // var inputSize : vec2<f32>;
+	
     let inputWidthRcas : f32 = resolution.outputwidth;
 	let inputHeightRcas : f32 = resolution.outputheight;
-    // inputSize.y = inputHeightRcas;
-	// var outputSize : vec2<f32>;
-    // outputSize.x = inputWidthRcas;
-    // outputSize.y = inputHeightRcas;
+   
 	
     let pos : vec2<f32> = floor(in.tex_coords / vec2<f32>(inputWidthRcas, inputHeightRcas));
 	let onemorex : f32 = 1.0 / inputWidthRcas;
 	let onemorey : f32 = 1.0 / inputHeightRcas;
 
-    // fetch a 3x3 neighborhood around the pixel 'e',
+        // fetch a 3x3 neighborhood around the pixel 'e',
 	//	a b c
 	//	d(e)f
 	//	g h i
